@@ -7,14 +7,31 @@
 //
 
 #import "AppDelegate.h"
-
+#import "ATMainViewController.h"
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    
+#pragma mark - storyboard之间的跳转
+    
+//    UIStoryboard *secondStoryBoard = [UIStoryboard storyboardWithName:@"Storyboard2" bundle:nil];
+//    test2* test2obj = [secondStoryBoard instantiateViewControllerWithIdentifier:@"test2"];
+//    [self.navigationController pushViewController:test2obj animated:YES];
+    
+    
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    ATMainViewController *main = [[ATMainViewController alloc] init];
+//    ATRecentActivitiesController *maa = [[ATRecentActivitiesController alloc] init];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:main];
+    self.window.rootViewController = nav;
+//    [nav setNavigationBarHidden:YES];
+//    [nav setToolbarHidden:YES];
+    //    NSLog(@"%@", self.window.rootViewController);
+    
     [self.window makeKeyAndVisible];
     return YES;
 }

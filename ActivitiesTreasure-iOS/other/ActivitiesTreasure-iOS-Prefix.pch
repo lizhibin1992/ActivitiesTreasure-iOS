@@ -13,4 +13,13 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
+
+// 1.判断是否为iOS7及以上
+#define iOS7 ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0)
+#define IOS7_STATUS_BAR_HEGHT ([[UIDevice currentDevice].systemVersion doubleValue] >= 7.0 ? 20.0f : 0.0f)
+
+#define tableViewX 64 
+#define menuHeight 44
+#define kCount 4
+#define dockHH 49
 #endif
